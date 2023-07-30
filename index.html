@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shop</title>
+</head>
+<body>
+    <div class="ord_window">
+        <form id="order_form">
+            <h1>Сделайте ваш заказ</h1>
+            <input type="text" placeholder="Ваш заказ" id="order_list">
+            <p></p>
+            <input type="text" placeholder="Ваш адрес" id="adress">
+            <p></p>
+            <button id="order">Заказать</button>
+        </form>
+    </div>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        let tg = window.Telegram.WebApp;
+        let order = document.getElementById("order");
+
+        order.addEventListener("click", () => {
+            let order_list = document.getElementById("order_list");
+            let adress = document.getElementById("adress");
+
+            let detail = {
+                order_list: order_list, 
+                adress: adress
+            }
+
+            tg.sendData(JSON.stringify(detail));
+        });
+    </script>
+</body>
+</html>
