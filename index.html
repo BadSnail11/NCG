@@ -13,6 +13,8 @@
             <p></p>
             <input type="text" placeholder="Ваш адрес" id="adress">
             <p></p>
+            <input type="number" placeholder="Цена" id="price">
+            <p></p>
             <button id="order">Заказать</button>
         </form>
     </div>
@@ -24,10 +26,12 @@
         order.addEventListener("click", () => {
             let order_list = document.getElementById("order_list");
             let adress = document.getElementById("adress");
+            let price = document.getElementById("price")
 
             let detail = {
                 order_list: order_list, 
-                adress: adress
+                adress: adress,
+                price: price
             }
 
             tg.sendData(JSON.stringify(detail));
