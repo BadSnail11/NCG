@@ -24,9 +24,9 @@
         let order = document.getElementById("order");
 
         order.addEventListener("click", () => {
-            let order_list = document.getElementById("order_list");
-            let adress = document.getElementById("adress");
-            let price = document.getElementById("price")
+            let order_list = document.getElementById("order_list").value;
+            let adress = document.getElementById("adress").value;
+            let price = document.getElementById("price").value;
 
             let detail = {
                 order_list: order_list, 
